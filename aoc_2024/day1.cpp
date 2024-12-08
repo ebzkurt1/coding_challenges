@@ -24,11 +24,22 @@ int main(int argc, char *argv[]) {
     std::stable_sort(left_int.begin(), left_int.end());
     std::stable_sort(right_int.begin(), right_int.end());
 
+    /* question 1
+
     int sum = 0;
     for (int index = 0; index < left_int.size(); index++)
         sum += std::abs(right_int[index] - left_int[index]);
 
     std::cout << sum << std::endl;
+    
+    */
+
+    int sum = 0;
+    for (int val: left_int)
+        sum += val * std::count(right_int.begin(), right_int.end(), val);
+
+    std::cout << sum << std::endl;
+    
 
     return 0;
 }
